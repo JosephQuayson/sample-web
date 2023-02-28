@@ -11,7 +11,6 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-jenkins') {
                            sh "printenv"
-                        
                            sh "mvn sonar:sonar" 
                     } 
                 }
