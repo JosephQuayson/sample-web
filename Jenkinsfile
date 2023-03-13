@@ -20,8 +20,6 @@ pipeline{
                         sh 'mvn sonar:sonar'
                     }
                     timeout(5){
-                        Checking status of sonar analysis
-                        make sure to create a webhook inside sonarqube  
                         def quality_gate = waitForQualityGate()
                         if (quality_gate != 'OK'){
                             error "sonar analysis failed"
@@ -33,10 +31,10 @@ pipeline{
             
         }
     }
-    // post{
-    //     always{
-    //         cleanWs()
-    //     }
-    // }
+       post{
+           always{
+               cleanWs()
+           }
+       }
     
 }
