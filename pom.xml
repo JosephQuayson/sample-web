@@ -23,7 +23,7 @@
       <id>nexusdeploymentrepo</id>
       <url>http://34.125.105.29:8081/repository/maven-hosted-snapshot/</url>
     </snapshotRepository>
-	<repository>
+     <repository>
 	  <id>nexusdeploymentrepo</id>
       <url>http://34.125.105.29:8081/repository/maven-hosted-release/</url>
     </repository>
