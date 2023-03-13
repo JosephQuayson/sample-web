@@ -14,7 +14,7 @@ pipeline{
 
             steps{
                 script{
-                    withSonarQubeEnv(credentialsId: 'NEW-SONAR'){
+                    withSonarQubeEnv(credentialsId: 'sonar-jenkins'){
                 
                         sh 'mvn clean deploy'
                         sh 'mvn sonar:sonar'
