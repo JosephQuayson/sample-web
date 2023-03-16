@@ -15,26 +15,25 @@ pipeline{
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-jenkins'){
-                
-                        sh 'mvn clean deploy'
-                        sh 'mvn sonar:sonar'
+                        sh '''
+                         mvn sonar:sonar
+                        '''
                     }
-                    timeout(5){
+                    timeout(5){              
                         def quality_gate = waitForQualityGate()
-                        if (quality_gate != 'OK'){
+                        if (quality_gate.status != 'OK'){
                             error "sonar analysis failed"
                         }
-
                     }
                 }
             }
             
         }
     }
-       post{
-           always{
-               cleanWs()
-           }
-       }
+    post{
+        always{
+            cleanWs()
+        }
+    }
     
 }
