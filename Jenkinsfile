@@ -28,7 +28,6 @@ pipeline{
             }
             
         }
-
         stage('build application'){
             agent{
                 docker{
