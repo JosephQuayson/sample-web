@@ -25,8 +25,7 @@ pipeline{
                         }
                     }
                 }
-            }
-            
+            }            
         }
         stage('build application'){
             agent{
