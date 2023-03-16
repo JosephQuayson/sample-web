@@ -15,6 +15,7 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-jenkins'){
                         sh '''
+                         mvn clean
                          mvn sonar:sonar
                         '''
                     }
