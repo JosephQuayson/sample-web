@@ -20,7 +20,7 @@
   </build>
    <distributionManagement>
       <snapshotRepository>
-      <id>nexusdeploymentrepo</id>
+      <id>my-nexus-repo</id>
       <url>http://34.125.188.234:8081/repository/maven-hosted-snapshot/</url>
     </snapshotRepository>
      <repository>
